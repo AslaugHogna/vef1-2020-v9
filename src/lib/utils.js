@@ -42,7 +42,7 @@ export function element(name, attributes = null, events = null,...children) {
 
     if (typeof child === 'string') {
       el.appendChild(document.createTextNode(child));
-    } else {
+    } else if (child) {
       el.appendChild(child);
     }
   }
@@ -68,6 +68,12 @@ export function el(name, ...children) {
  * @param {number} timestamp Unix timestamp to format
  * @returns {string} Formatted string.
  */
-export function formatDate(timestamp) {
+export function formatDate(date) {
   // TODO Útfæra með „vanilla JS“ eða nota date-fns pakka
+
+    const d = new Date(date);
+
+    if (Number.isNaN(d.getTime())) {
+      return date;
+    }
 }
