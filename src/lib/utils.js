@@ -1,4 +1,4 @@
-import { format } from "date-fns";
+import { format } from 'date-fns';
 
 /**
  * Create an element with attributes and events, and append elements or
@@ -71,9 +71,7 @@ export function el(name, ...children) {
 export function formatDate(date) {
   // TODO Útfæra með „vanilla JS“ eða nota date-fns pakka
 
-    const d = new Date(date);
-
-    if (Number.isNaN(d.getTime())) {
-      return date;
-    }
+  //const format = require('date-fns/format');
+  const formDate= format(date, 'dd.MM.yyyy HH:mm:ss');
+  return formDate;
 }

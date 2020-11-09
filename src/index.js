@@ -5,7 +5,6 @@ import { fetchEarthquakes } from './lib/earthquakes';
 
 
 document.addEventListener('DOMContentLoaded', async () => {
-  console.log("I work");
   init();
   fetchEarthquakes();
   // Hér er allt „vírað“ saman
