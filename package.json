@@ -4,14 +4,13 @@
   "description": "Verkefni 9 sækir gögn um jarðskjálfta frá USGS og birtir á korti með [Leaflet](https://leafletjs.com/).",
   "main": "index.js",
   "scripts": {
-    "watch-sass": "node-sass styles.scss styles.css && node-sass styles.scss styles.css -w",
-    "sass": "node-sass styles.scss styles.css",
-    "browser-sync": "browser-sync start --server --files index.html styles.css scripts.js",
-    "dev": "concurrently --kill-others \"npm run watch-sass\" \"npm run browser-sync\"",
+    "dev:browser-sync": "browser-sync start --server --files index.html styles.css ./dist/bundle.js",
+    "dev": "concurrently npm:dev:*",
+    "build": "concurrently npm:build:*",
     "lint": "stylelint **/*.scss --syntax scss",
-    "test": "eslint *.js **/*.js",
-    "build": "rollup -c",
-    "rollup-watch": "rollup -c -w",
+    "test": "eslint src/index.js src/lib/*.js",
+    "build:rollup": "rollup -c",
+    "dev:rollup": "rollup -c -w",
     "babel": "babel src --out-dir dist",
     "babel-watch": "babel src --out-dir dist --watch"
   },
@@ -31,6 +30,7 @@
     "@babel/preset-env": "^7.12.1",
     "@rollup/plugin-commonjs": "^16.0.0",
     "@rollup/plugin-node-resolve": "^10.0.0",
+    "browser-sync": "^2.26.13",
     "concurrently": "^5.3.0",
     "eslint": "^7.12.1",
     "eslint-config-airbnb-base": "^14.2.0",
@@ -41,7 +41,6 @@
   "dependencies": {
     "@babel/polyfill": "^7.12.1",
     "date-fns": "^2.16.1",
-    "leaflet": "^1.7.1",
-    "node-sass": "^5.0.0"
+    "leaflet": "^1.7.1"
   }
 }

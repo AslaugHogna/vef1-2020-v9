@@ -3,7 +3,7 @@ import { format } from 'date-fns';
 /**
  * Create an element with attributes and events, and append elements or
  * strings to it.
- * 
+ *
  * Usage:
  *  const el = element(
  *    'button',
@@ -13,29 +13,29 @@ import { format } from 'date-fns';
  *   );
  *  returns
  *  <button class="button">Takki</button> with a click handler.
- * 
+ *
  * @param {string} name Element name
  * @param {object} attributes Object containing attributes to attach to element.
  * @param {object} events Object of events to add to element.
  * @param  {...any} children List of elements or strings to append to element.
  * @returns {object} HTML element.
  */
-export function element(name, attributes = null, events = null,...children) {
-  const el = document.createElement(name);
+export function element(name, attributes = null, events = null, ...children) {
+  const el = document.createElement(name);		/* eslint-disable-line */
 
-  for (const child of children) {
+  for (const child of children) {						/* eslint-disable-line */
     if (!child) {
-      continue;
+      continue;														/* eslint-disable-line */
     }
 
     if (attributes) {
-      for (const attrib in attributes) {
+      for (const attrib in attributes) {								/* eslint-disable-line */
         el.setAttribute(attrib, attributes[attrib]);
       }
     }
 
     if (events) {
-      for (const event in events) {
+      for (const event in events) {											/* eslint-disable-line */
         el.addEventListener(event, events[event]);
       }
     }
@@ -53,7 +53,7 @@ export function element(name, attributes = null, events = null,...children) {
 /**
  * Simplified element function.
  * Creates an element and append elements or strings to it.
- * 
+ *
  * @param {string} name Element name
  * @param  {...any} children List of elements or strings to append to element.
  * @returns {object} HTML element.
@@ -64,14 +64,11 @@ export function el(name, ...children) {
 
 /**
  * Format a timestamp as dd.mm.yyyy hh:mm:ss e.g. "01.11.2020 12:00:00".
- * 
+ *
  * @param {number} timestamp Unix timestamp to format
  * @returns {string} Formatted string.
  */
 export function formatDate(date) {
-  // TODO Útfæra með „vanilla JS“ eða nota date-fns pakka
-
-  //const format = require('date-fns/format');
-  const formDate= format(date, 'dd.MM.yyyy HH:mm:ss');
+  const formDate = format(date, 'dd.MM.yyyy HH:mm:ss');
   return formDate;
 }
