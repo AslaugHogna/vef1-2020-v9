@@ -1,3 +1,10 @@
+ATHS: Allt á að virka sem skyldi. Tók nokkrar línur úr fyrir eslint, skýringar fylgja að neðan:
+utils.js - element fall frá Óla, dæmatímakennari sagði að ekki þyrfti að laga þetta.
+earthquakes.js - eslint vildi að fetchEarthquakes væri "default export" en það var alveg sama hvað ég gerði, ég fékk það ekki til að virka rétt.
+warning yfir console.log, en ég skildi það eftir því það setur villuna í console og mér finnst það fínt.
+map.js - kvartaði yfir block statement í línu 8 og ég skildi ekki kvörtunina, prófaði margt en endaði alltaf með fleiri villur. 
+
+
 # Verkefni 9
 
 ## Lýsing
